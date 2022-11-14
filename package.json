@@ -1,9 +1,29 @@
 {
   "dependencies": {
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongodb": "^4.11.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "name": "climate_change_visualizer_api",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ocean-s-777/React_climate_change_visualizer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ocean-s-777/React_climate_change_visualizer/issues"
+  },
+  "homepage": "https://github.com/Ocean-s-777/React_climate_change_visualizer#readme"
 }
