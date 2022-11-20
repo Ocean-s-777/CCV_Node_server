@@ -13,7 +13,7 @@ app.get('/*', (req, res) => {
     res.status(404).json({ message: '404' })
 })
 
-const port = process.env.PORT || 3000
-app.listen(port, () => {
-  console.log(`Running on port ${process.env.PORT}`)
+const PORT = process.env.PORT || 3002
+app.listen(PORT, () => {
+  console.log(`Running on port ${PORT}`)
 })
