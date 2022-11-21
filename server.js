@@ -6,7 +6,7 @@ const express = require("express")
 const app = express()
 
 // Routes
-app.use('/db', require('./routes/graphData'))
+app.use('/', require('./routes/graphData'))
 app.use('/profile', require('./routes/profile'))
 app.use('/custom', require('./routes/customViews'))
 app.get('/*', (req, res) => {
