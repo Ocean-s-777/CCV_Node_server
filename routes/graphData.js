@@ -23,21 +23,19 @@ async function packResponse(staticViewAddress) {
     return dataset
 }
 
-// router.get("/db", async (req, res) => {
-//     try {
-//         const db = await connectToDatabase()
-//         const collection = await db.collection("v1_g_a")
-//         const data = await collection.find({}).toArray()
-//         res.json(data)
-//     } catch (err) {
-//         console.error(err);
-//         res.json({ error: err })
-//     }
-// })
-
 router.get("/v1-2", async (req, res) => {
     try {
         let data = await packResponse("v1-2")
+        res.json(data)
+    } catch (err) {
+        console.error(err);
+        res.json({ error: err })
+    }
+})
+
+router.get("/v3", async (req, res) => {
+    try {
+        let data = await packResponse("v3")
         res.json(data)
     } catch (err) {
         console.error(err);
