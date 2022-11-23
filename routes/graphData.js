@@ -53,4 +53,14 @@ router.get("/v4", async (req, res) => {
     }
 })
 
+router.get("/v5", async (req, res) => {
+    try {
+        let data = await packResponse("v5")
+        res.json(data)
+    } catch (err) {
+        console.error(err);
+        res.json({ error: err })
+    }
+})
+
 module.exports = router
