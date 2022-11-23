@@ -12,19 +12,19 @@
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
-  "name": "climate_change_visualizer_api",
+  "name": "ccv_node_server",
   "description": "",
   "version": "1.0.0",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ocean-s-777/React_climate_change_visualizer.git"
+    "url": "git+https://github.com/Ocean-s-777/CCV_Node_server.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ocean-s-777/React_climate_change_visualizer/issues"
+    "url": "https://github.com/Ocean-s-777/CCV_Node_server/issues"
   },
-  "homepage": "https://github.com/Ocean-s-777/React_climate_change_visualizer#readme"
+  "homepage": "https://github.com/Ocean-s-777/CCV_Node_server#readme"
 }

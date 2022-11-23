@@ -43,4 +43,14 @@ router.get("/v3", async (req, res) => {
     }
 })
 
+router.get("/v4", async (req, res) => {
+    try {
+        let data = await packResponse("v4")
+        res.json(data)
+    } catch (err) {
+        console.error(err);
+        res.json({ error: err })
+    }
+})
+
 module.exports = router
