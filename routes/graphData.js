@@ -62,5 +62,14 @@ router.get("/v5", async (req, res) => {
         res.json({ error: err })
     }
 })
+router.get("/v6", async (req, res) => {
+    try {
+        let data = await packResponse("v6")
+        res.json(data)
+    } catch (err) {
+        console.error(err);
+        res.json({ error: err })
+    }
+})
 
 module.exports = router
