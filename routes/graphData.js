@@ -83,4 +83,24 @@ router.get("/v7", async (req, res) => {
     }
 })
 
+router.get("/v8_1", async (req, res) => {
+    try {
+        let data = await packResponse("v8_1")
+        res.json(data)
+    } catch (err) {
+        console.error(err);
+        res.json({ error: err })
+    }
+})
+
+router.get("/v8_2", async (req, res) => {
+    try {
+        let data = await packResponse("v8_2")
+        res.json(data)
+    } catch (err) {
+        console.error(err);
+        res.json({ error: err })
+    }
+})
+
 module.exports = router
