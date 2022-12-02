@@ -46,17 +46,17 @@ passport.use(new LocalStrategy(
   ));
 
 passport.use(new JwtStrategy(parameters, function(jwt_payload, done) {
-  console.log("Processing JWT payload for token content:")
-  console.log(jwt_payload);
-  
-  const now = Date.now() / 1000
-  if(jwt_payload.exp > now) {
-    done(null, jwt_payload)
-    console.log("JWT token is valid")
-  }
-  else {
-    done(null, false)
-  }
+    console.log("Processing JWT payload for token content:")
+    console.log(jwt_payload);
+
+    const now = Date.now() / 1000
+    if(jwt_payload.exp > now) {
+        done(null, jwt_payload)
+        console.log("JWT token is valid")
+    }
+    else {
+        done(null, false)
+    }
 }));
 
 
