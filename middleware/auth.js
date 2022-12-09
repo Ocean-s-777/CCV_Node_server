@@ -49,12 +49,14 @@ passport.use(new JwtStrategy(parameters, async function (jwt_payload, done) {
 
     const now = Date.now() / 1000
     if (jwt_payload.exp > now) {
-        done(null, jwt_payload)
         console.log("JWT token is valid")
         try {
             user = await returnByUsername(jwt_payload.username)
             if (!user) {
                 return done(null, false);
+            }
+            else{
+                done(null, jwt_payload)
             }
         } catch (e) {
             return done(e);
