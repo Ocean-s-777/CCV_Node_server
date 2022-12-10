@@ -56,7 +56,7 @@ router.post('/login', passport.authenticate('local', { session: false }), async 
     res.status(200).json({ token: token })
 })
 
-router.get('/verify', passport.authenticate('jwt', { session: false }), async (req, res) => {
+router.post('/verify', passport.authenticate('jwt', { session: false }), async (req, res) => {
     const userCollection = await returnUserCollection()
     const user = await userCollection.findOne({ id: req.user.id })
     if (user) {
