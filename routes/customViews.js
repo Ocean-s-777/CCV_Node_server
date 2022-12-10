@@ -61,7 +61,7 @@ router.delete('/deleteView', passport.authenticate('jwt', { session: false }), a
     }
 })
 
-router.get('/getView', async (req, res) => {
+router.post('/getView', async (req, res) => {
     let viewId = req.body.id
     if (viewId === undefined) {
         res.status(400).json({ message: "Missing data" })
