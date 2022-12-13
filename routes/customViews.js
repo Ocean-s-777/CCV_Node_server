@@ -37,7 +37,7 @@ router.post('/create', passport.authenticate('jwt', { session: false }), async (
     }
 })
 
-router.delete('/deleteView', passport.authenticate('jwt', { session: false }), async (req, res) => {
+router.post('/deleteView', passport.authenticate('jwt', { session: false }), async (req, res) => {
     let viewId = req.body.id
     let userId = req.user.id
     if (viewId === undefined) {
