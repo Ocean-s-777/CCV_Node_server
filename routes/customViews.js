@@ -33,7 +33,7 @@ router.post('/create', passport.authenticate('jwt', { session: false }), async (
         }
         await genCollection.insertOne(newView)
         await userCollection.updateOne({ id: userId }, { $push: { userViews: newView.id } })
-        res.status(200).json({ message: "View created" , id: newView.id})
+        res.status(200).json({ message: "View created", id: newView.id })
     }
 })
 
@@ -76,6 +76,14 @@ router.post('/getView', async (req, res) => {
             res.status(200).json(view)
         }
     }
+})
+
+router.get("/getAllUserViews", passport.authenticate('jwt', { session: false }), async (req, res) => {
+    let userId = req.user.id
+    const genCollection = await returnGenCollection()
+
+    const userViews = await genCollection.find({ owner: userId }).toArray()
+    res.status(200).json(userViews)
 })
 
 module.exports = router;

@@ -40,7 +40,7 @@ router.post('/register', async (req, res) => {
                 }
                 const token = await createToken(payload)
 
-                res.status(201).json({ token: token })
+                res.status(201).json({ token: token, username: newUser.username })
             }
         }
     }
@@ -53,14 +53,14 @@ router.post('/login', passport.authenticate('local', { session: false }), async 
     }
     const token = await createToken(payload)
 
-    res.status(200).json({ token: token })
+    res.status(200).json({ token: token, username: req.user.username })
 })
 
 router.post('/verify', passport.authenticate('jwt', { session: false }), async (req, res) => {
     const userCollection = await returnUserCollection()
     const user = await userCollection.findOne({ id: req.user.id })
     if (user) {
-        res.status(200).json({ message: "User verified", userId: req.user.id })
+        res.status(200).json({ message: "User verified", username: user.username })
     }
     else {
         res.status(401).json({ message: "User not found" })
