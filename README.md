@@ -1,3 +1,4 @@
+# [Link to the documentation](https://oamk-my.sharepoint.com/:b:/g/personal/t1raos00_students_oamk_fi/ESL1w0l0ENNMgYdMs0MLxRoBCrX4iKST5jJlKlOnjDX4HA?e=4UsDfE)
 # Node Server for the Climate Change Visualizer
 
 ## Installation 
