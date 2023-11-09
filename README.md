@@ -8,3 +8,5 @@ In this project directory, run: `npm install` to install the app dependencies.
 In this project directory, run either:
     * `npm run start`
     * or `npm run dev` (to start with nodemon)
+
+### As of 10.11.2023 database hosting was moved to MongoDB Atlas
